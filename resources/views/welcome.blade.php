@@ -1,141 +1,158 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="img/logo1.svg" rel="icon">
-    <title>Digital Marketing</title>
+    <title>Digitall Marketing</title>
 </head>
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-            * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-             body {
-            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-            font-family: 'Quantico', sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+    body {
+        background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        font-family: 'Quantico', sans-serif;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+    }
 
-            .login-container {
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0 14px 28px rgba(0,0,0,0.25),
-                            0 10px 10px rgba(0,0,0,0.22);
-                width: 400px;
-                max-width: 100%;
-                padding: 40px;
-                text-align: center;
-            }
-            h1 {
-                font-weight: bold;
-                margin-bottom: 20px;
-                color: #333;
-            }
-            .social-container {
-                margin: 20px 0;
-            }
-            .social-container a {
-                border: 1px solid #DDDDDD;
-                border-radius: 50%;
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 5px;
-                height: 40px;
-                width: 40px;
-                color: #333;
-            }
-            input {
-                background-color: #eee;
-                border: none;
-                padding: 12px 15px;
-                margin: 8px 0;
-                width: 100%;
-                border-radius: 5px;
-            }
-            button {
-                border-radius: 20px;
-                border: 1px solid #FF4B2B;
-                background-color: #FF4B2B;
-                color: #FFFFFF;
-                font-size: 12px;
-                font-weight: bold;
-                padding: 12px 45px;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                transition: transform 80ms ease-in;
-                margin-top: 15px;
-                cursor: pointer;
-            }
-            a {
-                color: #333;
-                font-size: 14px;
-                text-decoration: none;
-                margin: 15px 0;
-                display: block;
-            }
-            .signup-link {
-                margin-top: 30px;
-                color: #FF4B2B;
-                font-weight: bold;
-            }
-            .logo {
-                font-size: 24px;
-                font-weight: bold;
-                color: #FF4B2B;
-                margin-bottom: 20px;
-                display: block;
-            }
-        </style>
-    <body>
-        <div id="particles-js"></div>
-        <div class="login-container">
-            <span class="logo">Infinite Multiverse Marketing</span>
-            <h1>Sign In</h1>
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
-            <!-- Session Status -->
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+    .login-container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+        width: 400px;
+        max-width: 100%;
+        padding: 40px;
+        text-align: center;
+    }
 
-            <!-- Login Form -->
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
+    h1 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
 
-                <!-- Email Address -->
-                <x-text-input id="email" type="email" name="email" :value="old('email')" placeholder="Email" required autofocus autocomplete="username" />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    .social-container {
+        margin: 20px 0;
+    }
 
-                <!-- Password -->
-                <x-text-input id="password" type="password" name="password" placeholder="Password" required autocomplete="current-password" />
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+    .social-container a {
+        border: 1px solid #DDDDDD;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        height: 40px;
+        width: 40px;
+        color: #333;
+    }
 
-                <!-- Forgot Password -->
-                <!-- @if (Route::has('password.request'))
+    input {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    button {
+        border-radius: 20px;
+        border: 1px solid #FF4B2B;
+        background-color: #FF4B2B;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    a {
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 15px 0;
+        display: block;
+    }
+
+    .signup-link {
+        margin-top: 30px;
+        color: #FF4B2B;
+        font-weight: bold;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #FF4B2B;
+        margin-bottom: 20px;
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="login-container">
+        <span class="logo">Infinite Multiverse Marketing</span>
+        <h1>Sign In</h1>
+
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+
+        <!-- Login Form -->
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <!-- Email Address -->
+            <x-text-input id="email" type="email" name="email" :value="old('email')" placeholder="Email" required
+                autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+            <!-- Password -->
+            <x-text-input id="password" type="password" name="password" placeholder="Password" required
+                autocomplete="current-password" />
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+            <!-- Forgot Password -->
+            <!-- @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif -->
 
-                <button type="submit">{{ __('Sign In') }}</button>
-            </form>
+            <button type="submit">{{ __('Sign In') }}</button>
+        </form>
 
-            <a href="{{ route('register') }}" class="signup-link">Don't have an account? Sign Up</a>
-        </div>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-           <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        <a href="{{ route('register') }}" class="signup-link">Don't have an account? Sign Up</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             // Initialize particle.js
             particlesJS('particles-js', {
                 "particles": {
@@ -360,26 +377,26 @@
             });
 
             // Handle login form submission
-            loginForm.addEventListener('submit', function(e) {
+            loginForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const email = document.getElementById('loginEmail').value;
                 const password = document.getElementById('loginPassword').value;
-                
+
                 // Simulate loading
                 const submitBtn = e.target.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Entering Multiverse...';
-                
+
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
-                    
+
                     // Show welcome message
                     welcomeMessage.textContent = `Welcome back, ${email.split('@')[0]}!`;
                     characterMessage.textContent = 'You have successfully re-entered the Infinite Multiverse Marketing platform.';
                     characterImage.style.backgroundImage = 'url("https://i.imgur.com/Ru3HXUq.png")';
                     exploreBtn.style.display = 'block';
                     modal.style.display = 'block';
-                    
+
                     // Add cosmic effect to modal
                     const modalContent = document.querySelector('.modal-content');
                     modalContent.style.animation = 'none';
@@ -389,41 +406,41 @@
             });
 
             // Handle signup form submission
-            signupForm.addEventListener('submit', function(e) {
+            signupForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const name = document.getElementById('signupName').value;
                 const email = document.getElementById('signupEmail').value;
                 const password = document.getElementById('signupPassword').value;
                 const character = document.getElementById('favCharacter').value;
-                
+
                 // Simulate loading
                 const submitBtn = e.target.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Portal...';
-                
+
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
-                    
+
                     if (!character) {
                         alert('Please select your Multiverse Guide!');
                         return;
                     }
-                    
+
                     const selectedCharacter = characterData[character];
-                    
+
                     // Show welcome message with character info
                     welcomeMessage.textContent = `Welcome to the Multiverse, ${name}!`;
                     characterMessage.textContent = `Your guide is ${selectedCharacter.name}. "${selectedCharacter.quote}"`;
                     characterImage.style.backgroundImage = `url(${selectedCharacter.image})`;
                     exploreBtn.style.display = 'block';
                     modal.style.display = 'block';
-                    
+
                     // Add cosmic effect to modal
                     const modalContent = document.querySelector('.modal-content');
                     modalContent.style.animation = 'none';
                     void modalContent.offsetWidth; // Trigger reflow
                     modalContent.style.animation = 'modalFadeIn 0.5s ease-out';
-                    
+
                     // Reset form and switch to login
                     signupForm.reset();
                     container.classList.remove('right-panel-active');
@@ -431,17 +448,17 @@
             });
 
             // Close modal
-            closeModal.addEventListener('click', function() {
+            closeModal.addEventListener('click', function () {
                 modal.style.display = 'none';
             });
 
             // Explore button
-            exploreBtn.addEventListener('click', function() {
+            exploreBtn.addEventListener('click', function () {
                 // Add portal animation before redirecting
                 modal.style.animation = 'none';
                 void modal.offsetWidth;
                 modal.style.animation = 'modalFadeIn 0.5s reverse';
-                
+
                 setTimeout(() => {
                     modal.style.display = 'none';
                     // In a real app, you would redirect to the dashboard
@@ -450,7 +467,7 @@
             });
 
             // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
+            window.addEventListener('click', function (event) {
                 if (event.target === modal) {
                     modal.style.display = 'none';
                 }
@@ -459,9 +476,10 @@
             // Add floating animation to container
             setInterval(() => {
                 const float = Math.sin(Date.now() / 1000) * 5;
-                container.style.transform = `translateY(${float}px) rotateX(${float/10}deg) rotateY(${float/10}deg)`;
+                container.style.transform = `translateY(${float}px) rotateX(${float / 10}deg) rotateY(${float / 10}deg)`;
             }, 50);
         });
     </script>
-    </body>
-    </html>
+</body>
+
+</html>
