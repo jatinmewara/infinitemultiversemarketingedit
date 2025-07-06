@@ -1,0 +1,266 @@
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #8b92b2;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #4a4d5a;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: white;
+    color: black;
+}
+
+.radio-group {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-item input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #6366f1;
+}
+
+.radio-item label {
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+}
+
+.select-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #4a4d5a;
+    cursor: pointer;
+}
+
+.select-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: #4a4d5a;
+}
+
+.upload-area {
+    border: 2px dashed #a855f7;
+    border-radius: 12px;
+    background: #4a4d5a;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.upload-area:hover {
+    background: #f3e8ff;
+    border-color: #9333ea;
+}
+
+.upload-area.dragover {
+    background: #f3e8ff;
+    border-color: #9333ea;
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    stroke: #a855f7;
+}
+
+.upload-text {
+    font-size: 16px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.editor-container {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #4a4d5a;
+}
+
+.editor-toolbar {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background: #f9fafb;
+    border-radius: 6px 6px 0 0;
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 2px;
+    padding-right: 8px;
+    border-right: 1px solid #e5e7eb;
+    margin-right: 8px;
+}
+
+.toolbar-group:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+.toolbar-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #374151;
+    transition: background-color 0.2s;
+}
+
+.toolbar-btn:hover {
+    background: #e5e7eb;
+}
+
+.toolbar-btn.active {
+    background: #ddd6fe;
+    color: #7c3aed;
+}
+
+.toolbar-select {
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+.toolbar-select:hover {
+    background: #e5e7eb;
+}
+
+.editor-content {
+    min-height: 200px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    outline: none;
+    border: none;
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-primary {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background: #5856eb;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #6b7280;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-secondary:hover {
+    color: #374151;
+}
+
+.file-list {
+    margin-top: 16px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.file-name {
+    flex: 1;
+    font-size: 14px;
+    color: #374151;
+}
+
+.file-remove {
+    background: #ef4444;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.upload-area img.preview-img {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.upload-area.uploaded .upload-icon,
+.upload-area.uploaded .upload-text {
+    display: none;
+}
