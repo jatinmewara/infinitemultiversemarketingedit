@@ -75,7 +75,7 @@
                 <li class="nav-item {{ Request::is('users') ? 'active' : '' }}">
                     <a href="users" class="nav-link">
                         <i class="fas fa-user"></i>
-                        <span class="nav-text">Usersd</span>
+                        <span class="nav-text">Userss</span>
                     </a>
                 </li>
                 <!-- <li class="nav-item">
